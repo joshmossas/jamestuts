@@ -208,3 +208,77 @@ Use the `$` symbol to inject variables directly into text.
 String user = "Admin";
 print("Welcome back, $user!"); // "Welcome back, Admin!"
 ```
+
+## 9. Maps
+
+Maps are collections of key-value pairs. They are useful for storing data that can be retrieved using a unique key.
+
+```dart
+var scores = {
+  "Alice": 100,
+  "Bob": 85,
+  "Charlie": 92
+};
+
+// Accessing a value
+print(scores["Alice"]); // 100
+
+// Adding or updating an item
+scores["David"] = 78;
+
+// Removing an item
+scores.remove("Bob");
+
+// Checking if a key exists
+print(scores.containsKey("Charlie")); // true
+```
+
+### Map Type Declarations
+
+The type for maps are annotated like so `Map<[keyType], [valueType]>`. Examples:
+
+```dart
+// string keys with string values
+Map<String, String> favoriteFoods = {
+  "Alice": "pizza",
+  "Bob": "steak",
+  "Avery": "spaghetti"
+};
+
+// string keys with double values
+Map<String, double> subscriptionPrices = {
+  "standard": 5.99,
+  "premium": 15.99,
+  "ultimate": 39.99, 
+};
+
+// int keys with string values
+Map<int, String> employeeRoles = {
+  101: "Manager",
+  102: "Developer",
+  103: "Designer",
+  104: "Sales Associate"
+};
+```
+
+### Usage with For Loops
+
+The `.entries()` function will return a list of all the key value pairs for a map. There are other useful helpers like `.keys()` and `.values()`.
+
+```dart
+var scores = {
+  "Alice": 100,
+  "Bob": 85,
+  "Charlie": 92,
+};
+
+// loop over all the entries
+for entry in scores.entries() {
+  print("Player ${entry.key} has ${entry.value} point(s)!")
+}
+
+// other helpers
+var allKeys = scores.keys() // ["Alice", "Bob", "Charlie"]
+var allValues = scores.values() // [100, 85, 92]
+```
+
