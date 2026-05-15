@@ -110,9 +110,12 @@ while (energy > 0) {
 ```
 ## 6. Functions
 
-Functions are reusable blocks of code. That take in one or more inputs
+Functions are reusable blocks of code. They take in zero or more inputs and optionally return a value.
+
 
 ### Function With One Input
+
+This is a function named `greet` that returns a `String` and accepts a `String` called `name` as its input.
 
 ```Dart
 // Defining the function
@@ -129,6 +132,8 @@ void main() {
 
 ### Function With Two Inputs
 
+This is a function named `greet` that returns a `String` and accepts a `String` called `firstName` as its first input and a `String` called `lastName` as its second input.
+
 ```dart
 // Defining the function
 String greet(String firstName, String lastName) {
@@ -142,7 +147,48 @@ void main() {
 }
 ```
 
-## 6. Lists
+### Anatomy of a Function
+
+A Dart function consists of several key parts:
+
+```dart
+ReturnType functionName(ParameterType parameterName) {
+  // Function Body
+  return value; // Optional, depends on ReturnType
+}
+```
+
+- **Return Type**: Specifies what kind of data the function sends back (e.g., `int`, `String`, `double`, `bool`, or `void` if it returns nothing).
+- **Function Name**: A descriptive name used to "call" or execute the function.
+- **Parameters (Inputs)**: Variables inside parentheses that receive values when the function is called.
+- **Function Body**: The block of code `{ ... }` that runs when the function is executed.
+- **Return Statement**: Sends a value back to where the function was called.
+
+### Examples
+
+#### No Inputs, No Output (`void`)
+```dart
+void sayHello() {
+  print("Hello!");
+}
+```
+
+#### Multiple Inputs, Integer Output
+```dart
+int add(int a, int b) {
+  return a + b;
+}
+```
+
+#### Single Input, Boolean Output
+```dart
+bool isEven(int number) {
+  return number % 2 == 0;
+}
+```
+
+
+## 7. Lists
 
 Lists hold a collection of items in a specific order.
 
@@ -154,7 +200,7 @@ print(fruits[0]);       // Access the first item (Apple)
 print(fruits.length);   // Get the size of the list
 ```
 
-## 7. String Interpolation
+## 8. String Interpolation
 
 Use the `$` symbol to inject variables directly into text.
 
